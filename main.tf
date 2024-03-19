@@ -5,7 +5,7 @@ terraform {
       version = "~> 0.76"
     }
   }
-}
+
 
   backend "remote" {
     organization = "sxbeher3"
