@@ -40,11 +40,6 @@ resource "snowflake_table" "sensor" {
     type    = "VARIANT"
     comment = "Raw sensor data"
   }
-  column {
-    name    = "a"
-    type    = "VARCHAR(16777216)"
-    comment = "Raw sensor data"
-  }
 }
 resource "snowflake_file_format" "json" {
   provider             = snowflake
