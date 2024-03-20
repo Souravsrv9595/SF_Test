@@ -60,3 +60,17 @@ resource "snowflake_file_format" "json" {
   timestamp_format     = "AUTO"
   skip_byte_order_mark = true
 }
+
+resource "snowflake_view" "view" {
+  database = "DEMO_DB"
+  schema   = "DEMO_SCHEMA"
+  name     = "NEW_VIEW"
+
+  comment = "comment"
+
+  statement  = <<-SQL
+    select * from WEATHER_JSON;
+SQL
+  or_replace = false
+  is_secure  = false
+}
