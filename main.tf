@@ -55,13 +55,7 @@ resource "snowflake_file_format" "json" {
   timestamp_format     = "AUTO"
   skip_byte_order_mark = true
 }
-resource "snowflake_stage" "example_stage" {
-  name        = "EXAMPLE_STAGE"
-  url         = "s3://snowflake-nse-data/"
-  database    = "DEMO_DB"
-  schema      = "DEMO_SCHEMA"
-  credentials =  "AWS_KEY_ID='${var.access_key}' AWS_SECRET_KEY='${var.secret_key}'"
-}
+
 resource "snowflake_view" "view" {
   database = "DEMO_DB"
   schema   = "DEMO_SCHEMA"
