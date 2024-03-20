@@ -70,7 +70,7 @@ SQL
   is_secure  = false
 }
 
-resource "snowflake_table" "sensor" {
+resource "snowflake_table" "weather_modify" {
   provider = snowflake
   database = snowflake_database.demo_db.name
   schema   = snowflake_schema.demo_schema.name
