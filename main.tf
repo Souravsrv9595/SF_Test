@@ -69,3 +69,20 @@ SQL
   or_replace = false
   is_secure  = false
 }
+
+resource "snowflake_table" "sensor" {
+  provider = snowflake
+  database = snowflake_database.demo_db.name
+  schema   = snowflake_schema.demo_schema.name
+  name     = "WEATHER_JSON"
+  column {
+    name    = "var"
+    type    = "VARIANT"
+    comment = "Raw sensor data"
+  }
+  column {
+    name    = "a"
+    type    = "varchar"
+    comment = "Raw sensor data"
+  }
+}
