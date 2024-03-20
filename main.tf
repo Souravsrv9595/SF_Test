@@ -42,7 +42,7 @@ resource "snowflake_table" "sensor" {
   }
   column {
     name    = "a"
-    type    = "varchar"
+    type    = "VARCHAR(16777216)"
     comment = "Raw sensor data"
   }
 }
