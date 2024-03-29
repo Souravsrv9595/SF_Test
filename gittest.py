@@ -6,7 +6,7 @@ import json
 
 def hello(session: Session) -> DataFrame:
     df = session.table("LYBPOC_GIT_DEMO.POSTPILOT_GIT_DEMO.customers")
-    #df = df.groupBy("STATE").count()
+    df = df.groupBy("STATE").count()
     return df
 
 # For local debugging
